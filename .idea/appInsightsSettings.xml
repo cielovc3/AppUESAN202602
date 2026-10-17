@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="dev.lchang.appuesan" />
-                  <option name="mobileSdkAppId" value="1:891245339266:android:e629de0a6d408fd9234a9b" />
-                  <option name="projectId" value="esanapp-76379" />
-                  <option name="projectNumber" value="891245339266" />
+                  <option name="mobileSdkAppId" value="1:165994811981:android:fa3b4ea82c3b7a202ac204" />
+                  <option name="projectId" value="esanapp-b3cfc" />
+                  <option name="projectNumber" value="165994811981" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

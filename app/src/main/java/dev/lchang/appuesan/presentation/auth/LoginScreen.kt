@@ -68,7 +68,7 @@ fun LoginScreen(navController: NavController){
             onClick = {
                 if(email.isNotBlank() && password.isNotBlank()){
                     CoroutineScope(Dispatchers.Main).launch {
-                        val result = FirebaseAuthManager.loginUser(email, password)
+                        val result = FirebaseAuthManager.loginUser(email.trim(), password)
                         if(result.isSuccess)
                             navController.navigate("home")
                         else {

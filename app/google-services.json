@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "891245339266",
-    "project_id": "esanapp-76379",
-    "storage_bucket": "esanapp-76379.firebasestorage.app"
+    "project_number": "165994811981",
+    "project_id": "esanapp-b3cfc",
+    "storage_bucket": "esanapp-b3cfc.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:891245339266:android:e629de0a6d408fd9234a9b",
+        "mobilesdk_app_id": "1:165994811981:android:fa3b4ea82c3b7a202ac204",
         "android_client_info": {
           "package_name": "dev.lchang.appuesan"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyABhedBiQ63f5vDeJrxaLjw53TJm3FvSXE"
+          "current_key": "AIzaSyBL6NeApK1DXwqz2gC0FrDrC-lmWM_YCgw"
         }
       ],
       "services": {

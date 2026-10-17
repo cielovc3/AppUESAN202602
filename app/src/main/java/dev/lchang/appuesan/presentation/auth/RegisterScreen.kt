@@ -83,7 +83,7 @@ fun RegisterScreen(navController: NavController)
             enabled = password == confirmPassword,
             onClick = {
                 CoroutineScope(Dispatchers.Main).launch {
-                    val result = FirebaseAuthManager.registerUser(name, email, password)
+                    val result = FirebaseAuthManager.registerUser(name, email.trim(), password)
                     if(result.isSuccess)
                         navController.navigate("login")
                     else {

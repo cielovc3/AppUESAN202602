@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
     id("com.google.gms.google-services")
 }
 
@@ -55,6 +56,18 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.19.0"))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
+
+    // Supabase & Ktor
+    implementation(platform(libs.supabase.bom))
+    implementation(libs.supabase.postgrest)
+    implementation(libs.supabase.auth)
+    implementation(libs.supabase.storage)
+    implementation(libs.supabase.realtime)
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.kotlinx.serialization.json)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
