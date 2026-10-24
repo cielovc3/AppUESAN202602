@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dev.lchang.appuesan.presentation.apifootball.ApiFootballScreen
 import dev.lchang.appuesan.presentation.auth.LoginScreen
 import dev.lchang.appuesan.presentation.auth.RegisterScreen
 import dev.lchang.appuesan.presentation.home.HomeScreen
@@ -16,7 +17,7 @@ fun AppNavGraph(){
     val navController = rememberNavController()
 
     NavHost(navController = navController,
-            startDestination = "login")
+            startDestination = "home")
     {
         composable("register") { RegisterScreen(navController) }
         composable("login") { LoginScreen(navController) }
@@ -38,6 +39,11 @@ fun AppNavGraph(){
         composable("supabase") {
             DrawerScaffold(navController) {
                 SupabaseStorageScreen()
+            }
+        }
+        composable("apifootball") {
+            DrawerScaffold(navController) {
+                ApiFootballScreen()
             }
         }
     }
