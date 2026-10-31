@@ -1,5 +1,4 @@
 import java.util.Properties
-import java.io.FileInputStream
 
 plugins {
     alias(libs.plugins.android.application)
@@ -11,11 +10,9 @@ plugins {
 val localProperties = Properties().apply {
     val file = rootProject.file("local.properties")
     if (file.exists()) {
-        load(FileInputStream(file))
+        load(file.inputStream())
     }
 }
-val apiKey = localProperties.getProperty("API_KEY", "").trim()
-val apiBaseUrl = localProperties.getProperty("API_BASE_URL", "https://v3.football.api-sports.io/").trim()
 
 android {
     namespace = "dev.lchang.appuesan"
@@ -31,8 +28,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "API_BASE_URL", "\"$apiBaseUrl\"")
-        buildConfigField("String", "API_KEY", "\"$apiKey\"")
+
+        buildConfigField("String", "API_BASE_URL", "\"${localProperties.getProperty("API_BASE_URL", "")}\"")
+        buildConfigField("String", "API_KEY", "\"${localProperties.getProperty("API_KEY", "")}\"")
     }
 
     buildTypes {
@@ -72,15 +70,11 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
 
-    // Supabase & Ktor
+    //Supabase & Ktor
     implementation(platform(libs.supabase.bom))
-    implementation(libs.supabase.postgrest)
-    implementation(libs.supabase.auth)
     implementation(libs.supabase.storage)
-    implementation(libs.supabase.realtime)
     implementation(libs.ktor.client.android)
-    implementation(libs.ktor.client.content.negotiation)
-    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.client.core)
     implementation(libs.kotlinx.serialization.json)
 
     //Retrofit

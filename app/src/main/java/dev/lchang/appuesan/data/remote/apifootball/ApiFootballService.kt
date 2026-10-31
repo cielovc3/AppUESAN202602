@@ -10,4 +10,5 @@ interface ApiFootballService {
 
     @GET("teams")
     suspend fun getTeamsByCountry(@Query("country") country: String): TeamResponse
+
 }

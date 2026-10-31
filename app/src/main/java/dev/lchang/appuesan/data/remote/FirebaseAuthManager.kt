@@ -42,5 +42,4 @@ object FirebaseAuthManager {
         auth.signOut()
     }
 
-
 }

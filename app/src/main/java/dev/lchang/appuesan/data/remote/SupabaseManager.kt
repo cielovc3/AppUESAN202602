@@ -1,10 +1,7 @@
 package dev.lchang.appuesan.data.remote
 
 import io.github.jan.supabase.createSupabaseClient
-import io.github.jan.supabase.auth.Auth
-import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.storage.Storage
-import io.github.jan.supabase.realtime.Realtime
 
 object SupabaseManager {
 
@@ -14,10 +11,8 @@ object SupabaseManager {
     val client = createSupabaseClient(
         supabaseUrl = SUPABASE_URL,
         supabaseKey = SUPABASE_KEY
-    ) {
-        install(Postgrest)
-        install(Auth)
+    ){
         install(Storage)
-        install(Realtime)
     }
+
 }

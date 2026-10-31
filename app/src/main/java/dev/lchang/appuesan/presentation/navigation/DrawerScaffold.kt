@@ -78,7 +78,7 @@ fun DrawerScaffold(navController: NavController,
                     }
                 )
                 NavigationDrawerItem(
-                    label = { Text("apifootball")},
+                    label = { Text("API Football")},
                     selected = false,
                     onClick = {
                         navController.navigate("apifootball")
