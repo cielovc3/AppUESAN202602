@@ -89,6 +89,10 @@ fun DrawerScaffold(navController: NavController,
                     selected = false,
                     onClick = {
                         FirebaseAuthManager.logout()
+                        scope.launch { drawerState.close() }
+                        navController.navigate("login") {
+                            popUpTo(navController.graph.id) { inclusive = true }
+                        }
                     }
                 )
             }
